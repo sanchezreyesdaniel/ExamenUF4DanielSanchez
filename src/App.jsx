@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Prueba1 } from './vistas/Prueba1'
 import { Prueba2 } from './vistas/Prueba2'
 import { Home } from './vistas/Home'
+import { ContextoProvider } from './context/GlobalContext'
 
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
 
   return (
     <>
+     <ContextoProvider>
+
+    
      <Router>
         <div>
           <Header></Header>
@@ -23,6 +27,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      </ContextoProvider>
     </>
   )
 }
