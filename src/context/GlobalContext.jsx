@@ -10,27 +10,28 @@ export const ContextoProvider = ({ children }) => {
 //     const onOpen = () => setIsOpen(true);
 //     const onClose = () => setIsOpen(false);
 // //para mostrar
-    
-//         const fetchHistorias = async () => {
-//             try {
-//                 const response = await fetch('https://servidor-repositorio.vercel.app/historias');
-//                 const data = await response.json();
-//                 setHistorias(data);
-//             } catch (error) {
-//                 console.error("Error fetching historias:", error);
-//             }
-//         };
-//         useEffect(() => {
-//         fetchHistorias();
-//     }, []);
 
-    const [cartas, setCartas] = useState(cartasJson.cervezas)
+    const [cartas, setCartas] = useState([])
+        const fetchHistorias = async () => {
+            try {
+                const response = await fetch('https://servidor-json-prueba.vercel.app/cervezas');
+                const data = await response.json();
+                setCartas(data);
+            } catch (error) {
+                console.error("Error fetching historias:", error);
+            }
+        };
+        useEffect(() => {
+        fetchHistorias();
+    }, []);
+
+    //const [cartas, setCartas] = useState(cartasJson.cervezas)
     //const [dataHistoria, setDataHistoria ] = useState()
 
     return (
         <ContextoGlobal.Provider value={{ 
             // historias, setHistorias, dataHistoria, setDataHistoria, isOpen, onOpen, onClose, fetchHistorias 
-            cartas,setCartas
+            cartas,setCartas,fetchHistorias
             }}>
             {children}
         </ContextoGlobal.Provider>
