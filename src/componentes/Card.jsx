@@ -7,7 +7,7 @@ export function Card({ id, titulo, texto, imagen }) {
   const handleEdit = () => {
     setShowModal(true);
   };
-
+//Hola
   return (
     <div>
       <div id={id} className="card" style={{ width: "18rem" }}>
