@@ -52,8 +52,11 @@ export function ModalForm() {
             </Button>
 
             <Modal show={showModal} onHide={handleClose}>
-                <Modal.Header closeButton>
+                {/* <Modal.Header closeButton>
                     <Modal.Title>Nuevo Elemento</Modal.Title>
+                </Modal.Header> NORMAL*/}
+                <Modal.Header closeButton>
+                <Modal.Title>{titulo ? titulo : 'Nuevo Elemento'}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
