@@ -9,7 +9,7 @@ export const ContextoProvider = ({ children }) => {
 
 //     const onOpen = () => setIsOpen(true);
 //     const onClose = () => setIsOpen(false);
-// //para mostrar
+// //para mostra
 
     const [cartas, setCartas] = useState([])
         const fetchHistorias = async () => {
